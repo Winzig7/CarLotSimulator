@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CarLotSimulator
 {
@@ -28,6 +29,7 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+             
             Carlot lot = new Carlot();
             var bmw = new Car();
             lot.CarList.Add(bmw);
@@ -50,10 +52,23 @@ namespace CarLotSimulator
             lot.CarList.Add(tesla);
             tesla.MakeEngineSound();
             tesla.MakeHonkSound();
+            Console.WriteLine($"Number of cars created : {Carlot.numberOfCars}");
+
+            var Car1 = new Car() { Make = "Honda", Year = 2000, Model = "civic" };
+            Console.WriteLine($"Number of cars created : {Carlot.numberOfCars}");
+
+            var car2 = new Car() { Make = "Toyota", Year = 2020, Model = "Camry" };
+            Console.WriteLine($"Number of cars created : {Carlot.numberOfCars}");
+
+            var car3 = new Car() { Make = "Tesla", Year = 2022, Model = "S" };
+            Console.WriteLine($"Number of cars created : {Carlot.numberOfCars}");
+
+            
 
             foreach (var car in lot.CarList)
             {
                 Console.WriteLine($"Year:{car.Year} Make: {car.Make} Model:{car.Model}");
+
             }
 
 

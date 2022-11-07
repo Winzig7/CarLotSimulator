@@ -8,6 +8,7 @@ namespace CarLotSimulator
 {
     public class Car
     {
+        
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
@@ -23,5 +24,9 @@ namespace CarLotSimulator
         {
             Console.WriteLine($"{HonkNoise} {HonkNoise}");
         }
+        public Car()
+        { Carlot.numberOfCars++; }
     }
+
+
 }
